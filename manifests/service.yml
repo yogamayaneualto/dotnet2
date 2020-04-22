@@ -4,6 +4,10 @@ metadata:
     name: rahulltelkardotnet
 spec:
     type: LoadBalancer
+   status:
+    loadBalancer:
+     ingress:
+     - ip: 52.167.87.19
     ports:
     - port: 80 
     selector:
