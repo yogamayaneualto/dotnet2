@@ -1,14 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: rahulltelkardotnet
+  name: rahulltelkardotnet
 spec:
-    type: LoadBalancer
+  selector:
+    app: rahulltelkardotnet
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
 status:
-    loadBalancer:
-      ingress:
-      - ip: 52.167.87.19
-    ports:
-    - port: 80
-    selector:
-        app: rahulltelkardotnet
+  loadBalancer:
+    ingress:
+    - ip: 52.167.87.19
